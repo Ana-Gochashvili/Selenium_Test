@@ -1,10 +1,28 @@
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 public class TestOne {
 
-    public static void main(String[] args) {
-        int i = 5;
-        while (i > 0){
-            System.out.println(i);
-            i--;
-        }
+
+    @Test
+    public void getTestOne(){
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().window().maximize();
+
+        driver.get("https://www.google.com/");
+
+        System.out.println("Title: \"" + driver.getTitle() + "\"");
+
+        driver.quit();
+
     }
+
+
+
+
+
 }
